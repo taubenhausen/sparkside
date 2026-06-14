@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Sparkside</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .form-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2rem;
+      border: 1px solid var(--bdr);
+      width: fit-content;
+    }
+
+    .form-tab {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: .6rem 1.4rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--dim);
+      border: none;
+      border-right: 1px solid var(--bdr);
+      transition: color .2s, background .2s;
+      font-family: var(--fb);
+    }
+
+    .form-tab:last-child {
+      border-right: none;
+    }
+
+    .form-tab.active {
+      background: var(--grad);
+      color: var(--w);
+    }
+
+    .form-panel {
+      display: none;
+    }
+
+    .form-panel.active {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .fg-check {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: .65rem;
+    }
+
+    .fg-check input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--g);
+      cursor: pointer;
+    }
+
+    .fg-check label {
+      font-size: .75rem;
+      line-height: 1.55;
+      letter-spacing: .02em;
+      text-transform: none;
+      color: var(--dim);
+      cursor: pointer;
+    }
+
+    .fg-check label a {
+      color: var(--g);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    #form-msg {
+      display: none;
+    }
+
+    .cta-glow::after {
+      background: radial-gradient(ellipse at 30%, rgba(247, 37, 133, .06) 0%, rgba(58, 12, 163, .04) 60%, transparent 80%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cur"></div>
+
+  <nav id="nav">
+    <div class="nav-in">
+      <a class="logo" href="index.html">SPARK<span>/</span>SIDE</a>
+      <ul class="nl">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Leistungen</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html" class="on">Kontakt</a></li>
+      </ul>
+      <a class="ncta" href="contact.html?typ=projekt">Projekt starten</a>
+      <button class="burg" id="burg" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="drw" id="drw">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="services.html" onclick="closeDrawer()">Leistungen</a>
+    <a href="portfolio.html" onclick="closeDrawer()">Portfolio</a>
+    <a href="contact.html" onclick="closeDrawer()">Kontakt</a>
+    <a class="drw-cta" href="contact.html?typ=projekt" onclick="closeDrawer()">Projekt starten →</a>
+  </div>
+
+  <div class="spacer"></div>
+
+  <main>
+    <div class="ph">
+      <p class="tag rv">Schreib uns</p>
+      <h1 class="rv d1">LASS UNS<br><span>REDEN.</span></h1>
+    </div>
+
+    <div class="cg">
+      <div class="cl rv">
+        <!-- Portrait-Platzhalter: Füge dein Foto als assets/portrait.webp ein, dann ersetze diesen Block durch <img src="assets/portrait.webp" alt="Portrait" class="portrait-img" /> -->
+        <div class="portrait-ph">
+          <div class="portrait-ph-inner">
+            <img src="assets/image00001.jpeg" alt="Portrait" class="portrait-img" />
+          </div>
+        </div>
+        <p class="portrait-name">Sofija Reich</p>
+        <p class="tag">Kontakt</p>
+        <h2>BEREIT FÜR<br>ETWAS <span>NEUES?</span></h2>
+        <p>Ob Projekt, Zusammenarbeit oder einfach eine Frage — wir antworten innerhalb von 24 Stunden.</p>
+
+        <div class="cdet">
+          <div class="cdet-ic">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div>
+            <div class="cdet-l">E-Mail</div>
+            <div class="cdet-v"><a href="mailto:sparkside@gmail.com">sparkside@gmail.com</a></div>
+          </div>
+        </div>
+
+        <div class="cdet">
+          <div class="cdet-ic">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div>
+            <div class="cdet-l">Standort</div>
+            <div class="cdet-v">Schweiz</div>
+          </div>
+        </div>
+
+        <div class="cdet">
+          <div class="cdet-ic">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div>
+            <div class="cdet-l">Antwortzeit</div>
+            <div class="cdet-v">Innerhalb von 24 Stunden</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv d1">
+        <div class="form-tabs">
+          <button class="form-tab active" onclick="switchTab('kontakt', this)">Kontakt</button>
+          <button class="form-tab" onclick="switchTab('projekt', this)">Projekt starten</button>
+        </div>
+
+        <div id="form-msg" class="form-msg"></div>
+
+        <!-- Kontakt-Formular -->
+        <form id="form-kontakt" class="form-panel active" action="https://formspree.io/f/DEINE_FORMSPREE_ID"
+          method="POST">
+          <input type="hidden" name="_subject" value="Neue Kontaktanfrage — Sparkside" />
+          <input type="hidden" name="anfrage_typ" value="Kontakt" />
+
+          <div class="fr">
+            <div class="fg">
+              <label for="k-vorname">Vorname *</label>
+              <input id="k-vorname" type="text" name="vorname" required placeholder="Max" autocomplete="given-name" />
+            </div>
+            <div class="fg">
+              <label for="k-nachname">Nachname *</label>
+              <input id="k-nachname" type="text" name="nachname" required placeholder="Muster"
+                autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="fr">
+            <div class="fg">
+              <label for="k-email">E-Mail *</label>
+              <input id="k-email" type="email" name="email" required placeholder="max@beispiel.ch"
+                autocomplete="email" />
+            </div>
+            <div class="fg">
+              <label for="k-telefon">Telefon</label>
+              <input id="k-telefon" type="tel" name="telefon" placeholder="+41 79 000 00 00" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="fg">
+            <label for="k-nachricht">Nachricht *</label>
+            <textarea id="k-nachricht" name="nachricht" required placeholder="Wie können wir dir helfen?"></textarea>
+          </div>
+
+          <div class="fg-check">
+            <input type="checkbox" id="k-dsgvo" name="datenschutz" required value="akzeptiert" />
+            <label for="k-dsgvo">
+              Ich stimme der <a href="#">Datenschutzerklärung</a> zu und bin einverstanden, dass meine Daten zur
+              Bearbeitung meiner Anfrage verwendet werden.
+            </label>
+          </div>
+
+          <button type="submit" class="fsub">Nachricht senden →</button>
+        </form>
+
+        <!-- Projekt-Formular -->
+        <form id="form-projekt" class="form-panel" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST">
+          <input type="hidden" name="_subject" value="Neue Projektanfrage — Sparkside" />
+          <input type="hidden" name="anfrage_typ" value="Projekt starten" />
+
+          <div class="fr">
+            <div class="fg">
+              <label for="p-vorname">Vorname *</label>
+              <input id="p-vorname" type="text" name="vorname" required placeholder="Max" autocomplete="given-name" />
+            </div>
+            <div class="fg">
+              <label for="p-nachname">Nachname *</label>
+              <input id="p-nachname" type="text" name="nachname" required placeholder="Muster"
+                autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="fr">
+            <div class="fg">
+              <label for="p-email">E-Mail *</label>
+              <input id="p-email" type="email" name="email" required placeholder="max@beispiel.ch"
+                autocomplete="email" />
+            </div>
+            <div class="fg">
+              <label for="p-telefon">Telefon</label>
+              <input id="p-telefon" type="tel" name="telefon" placeholder="+41 79 000 00 00" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="fr">
+            <div class="fg">
+              <label for="p-leistung">Gewünschte Leistung *</label>
+              <select id="p-leistung" name="leistung" required>
+                <option value="">Bitte wählen …</option>
+                <option value="Webdesign & Entwicklung">Webdesign &amp; Entwicklung</option>
+                <option value="Branding & Corporate Design">Branding &amp; Corporate Design</option>
+                <option value="Social Media Management">Social Media Management</option>
+                <option value="Print & Digitale Dossiers">Print &amp; Digitale Dossiers</option>
+                <option value="SEO & Digital Ads">SEO &amp; Digital Ads</option>
+                <option value="Mehrere / Paket">Mehrere / Paket</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="p-budget">Geschätztes Budget</label>
+              <select id="p-budget" name="budget">
+                <option value="Noch unklar">Noch unklar</option>
+                <option value="Bis CHF 2'000">Bis CHF 2'000</option>
+                <option value="CHF 2'000–5'000">CHF 2'000–5'000</option>
+                <option value="CHF 5'000–10'000">CHF 5'000–10'000</option>
+                <option value="Über CHF 10'000">Über CHF 10'000</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label for="p-unternehmen">Unternehmen / Website</label>
+            <input id="p-unternehmen" type="text" name="unternehmen" placeholder="Muster GmbH — muster.ch" />
+          </div>
+
+          <div class="fg">
+            <label for="p-nachricht">Projektbeschreibung *</label>
+            <textarea id="p-nachricht" name="nachricht" required
+              placeholder="Erzähl uns von deinem Projekt — was soll entstehen, was sind deine Ziele?"
+              style="min-height:150px"></textarea>
+          </div>
+
+          <div class="fg-check">
+            <input type="checkbox" id="p-dsgvo" name="datenschutz" required value="akzeptiert" />
+            <label for="p-dsgvo">
+              Ich stimme der <a href="#">Datenschutzerklärung</a> zu und bin einverstanden, dass meine Daten zur
+              Bearbeitung meiner Anfrage verwendet werden.
+            </label>
+          </div>
+
+          <button type="submit" class="fsub">Anfrage senden →</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-top">
+      <div>
+        <div class="fl">SPARK<span>/</span>SIDE</div>
+        <p class="ft-tag">Digitale Lösungen für Unternehmen, die rausstechen wollen.</p>
+      </div>
+      <div class="fcol">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:sparkside@gmail.com">sparkside@gmail.com</a></li>
+          <li><span style="font-size:.82rem;color:var(--dim)">Schweiz</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span class="fcp">© 2025 Sparkside. Alle Rechte vorbehalten.</span>
+      <div class="flg"><a href="#">Datenschutz</a><a href="#">Impressum</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function switchTab(panel, btn) {
+      document.querySelectorAll('.form-tab').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.form-panel').forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('form-' + panel).classList.add('active');
+      var msg = document.getElementById('form-msg');
+      msg.style.display = 'none';
+      msg.className = 'form-msg';
+    }
+
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('typ') === 'projekt') {
+        var btn = document.querySelectorAll('.form-tab')[1];
+        if (btn) switchTab('projekt', btn);
+      }
+
+      ['form-kontakt', 'form-projekt'].forEach(function (id) {
+        var form = document.getElementById(id);
+        if (!form) return;
+
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          var submitBtn = form.querySelector('.fsub');
+          var originalText = submitBtn.textContent;
+          var msg = document.getElementById('form-msg');
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Wird gesendet …';
+
+          try {
+            var res = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+              msg.className = 'form-msg success';
+              msg.textContent = 'Vielen Dank — wir melden uns innerhalb von 24 Stunden bei dir.';
+              msg.style.display = 'block';
+              form.reset();
+            } else {
+              var data = await res.json();
+              throw new Error(data.errors ? data.errors.map(function (e) { return e.message; }).join(', ') : 'Fehler');
+            }
+          } catch (err) {
+            msg.className = 'form-msg error';
+            msg.textContent = 'Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt: sparkside@gmail.com';
+            msg.style.display = 'block';
+          }
+
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>                                                                                           

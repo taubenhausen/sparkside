@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Sparkside</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="cur"></div>
+
+  <nav id="nav">
+    <div class="nav-in">
+      <a class="logo" href="index.html">SPARK<span>/</span>SIDE</a>
+      <ul class="nl">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Leistungen</a></li>
+        <li><a href="portfolio.html" class="on">Portfolio</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+      <a class="ncta" href="contact.html?typ=projekt">Projekt starten</a>
+      <button class="burg" id="burg" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="drw" id="drw">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="services.html" onclick="closeDrawer()">Leistungen</a>
+    <a href="portfolio.html" onclick="closeDrawer()">Portfolio</a>
+    <a href="contact.html" onclick="closeDrawer()">Kontakt</a>
+    <a class="drw-cta" href="contact.html?typ=projekt" onclick="closeDrawer()">Projekt starten →</a>
+  </div>
+
+  <div class="spacer"></div>
+
+  <main>
+    <!-- Page Header -->
+    <div class="ph">
+      <p class="tag rv">Meine Arbeit</p>
+      <h1 class="rv d1">SELECTED<br><span>WORK.</span></h1>
+    </div>
+
+    <!-- Featured Hero: All in One Bar -->
+    <div style="max-width:1300px;margin:0 auto;padding:3rem 2.5rem 0;">
+      <a class="pi-hero rv" href="projekt-all-in-one-bar.html" aria-label="All in One Bar Ebikon — Projekt ansehen">
+        <div class="pi-hero-img">
+          <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+            <source src="assets/videos/bar-reel.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="pi-hero-overlay">
+          <div>
+            <p class="tag" style="margin-bottom:.5rem">Featured Project</p>
+            <h2 class="pi-hero-title">ALL IN ONE<br>BAR EBIKON</h2>
+            <div class="pi-tags">
+              <span class="pi-tag">Fotografie</span>
+              <span class="pi-tag">Videografie</span>
+              <span class="pi-tag">Content Creation</span>
+              <span class="pi-tag">Video-Ads</span>
+            </div>
+          </div>
+        </div>
+        <div class="pi-hero-arr">↗</div>
+      </a>
+    </div>
+
+    <!-- Filter Tabs + Grid -->
+    <div style="max-width:1300px;margin:0 auto;padding:3rem 2.5rem 0;">
+      <div class="pf-tabs rv">
+        <button class="pf-tab active" data-filter="alle">Alle</button>
+        <button class="pf-tab" data-filter="foto">Fotografie</button>
+        <button class="pf-tab" data-filter="video">Videografie</button>
+        <button class="pf-tab" data-filter="design">Design & Print</button>
+      </div>
+    </div>
+
+    <!-- 3-column Project Grid -->
+    <div class="pg-3">
+
+      <!-- 1. Restaurant Sempia -->
+      <a class="pi rv" href="projekt-sempia.html" data-cat="foto video">
+        <div class="pi-img">
+          <img src="assets/sempia/_DSF0025.webp" alt="Restaurant Sempia Nottwil" loading="lazy" />
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">RESTAURANT SEMPIA</div>
+            <div class="pi-c">Fotografie · Video-Ad · Content</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+      <!-- 2. Hotel Sempachersee -->
+      <a class="pi rv d1" href="projekt-hotel-sempachersee.html" data-cat="foto design">
+        <div class="pi-img">
+          <img src="assets/lago/lago-3.webp" alt="Hotel Sempachersee — Bar & Lounge LAGO" loading="lazy" />
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">HOTEL SEMPACHERSEE</div>
+            <div class="pi-c">Fotografie · Print Design · Grafik</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+      <!-- 3. Event Location Aurora -->
+      <a class="pi rv d2" href="projekt-event-locations.html#aurora" data-cat="foto">
+        <div class="pi-img">
+          <img src="assets/aurora/aurora-1.webp" alt="Event Location Aurora Nottwil" loading="lazy" />
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">EVENT LOCATION AURORA</div>
+            <div class="pi-c">Fotografie · Location Shooting</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+      <!-- 4. LUKB Rückblick -->
+      <a class="pi rv" href="projekt-event-locations.html#lukb" data-cat="foto">
+        <div class="pi-img">
+          <img src="assets/lukb/lukb-1.webp" alt="LUKB Rückblick Event Nottwil" loading="lazy" />
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">LUKB RÜCKBLICK</div>
+            <div class="pi-c">Event-Fotografie · Dokumentation</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+      <!-- 5. SPZ Event-Halle -->
+      <a class="pi rv d1" href="projekt-event-locations.html#spz" data-cat="foto">
+        <div class="pi-img">
+          <img src="assets/spz/MH7_5547-merged.webp" alt="SPZ Event-Halle Nottwil" loading="lazy" />
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">SPZ EVENT-HALLE</div>
+            <div class="pi-c">Fotografie · Location Shooting</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+      <!-- 6. Restaurant Vivace -->
+      <a class="pi rv d2" href="projekt-vivace.html" data-cat="foto design">
+        <div class="pi-img">
+          <img src="assets/vivace/MH7_6002.webp" alt="Restaurant Vivace Nottwil" loading="lazy" />
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">RESTAURANT VIVACE</div>
+            <div class="pi-c">Fotografie · Menu Design</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+      <!-- 7. Hochzeit Fotografie -->
+      <a class="pi rv" href="projekt-hochzeit.html" data-cat="foto">
+        <div class="pi-img">
+          <img src="assets/hochzeit/hochzeit-1.webp" alt="Hochzeit Fotografie" loading="lazy" />
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">HOCHZEIT FOTOGRAFIE</div>
+            <div class="pi-c">Hochzeitsfotografie · Reportage</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+      <!-- 8. Videografie -->
+      <a class="pi rv d1" href="projekt-videografie.html" data-cat="video">
+        <div class="pi-img" style="background:var(--bg3);display:flex;align-items:center;justify-content:center;min-height:240px;">
+          <video src="assets/videos/bar-video-ad.webm" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></video>
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">VIDEOGRAFIE & REELS</div>
+            <div class="pi-c">Video-Ads · Social Reels · Content</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+      <!-- 9. Print & Design -->
+      <a class="pi rv d2" href="projekt-design.html" data-cat="design">
+        <div class="pi-img">
+          <img src="assets/design/hss-folder-1.png" alt="Print & Design — HSS Sales Folder" loading="lazy" />
+        </div>
+        <div class="pi-line"></div>
+        <div class="pi-meta">
+          <div>
+            <div class="pi-t">PRINT & DESIGN</div>
+            <div class="pi-c">Menu Design · Broschüren · Plakate</div>
+          </div>
+          <div class="pi-a">↗</div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-top">
+      <div>
+        <div class="fl">SPARK<span>/</span>SIDE</div>
+        <p class="ft-tag">Digitale Lösungen für Unternehmen, die rausstechen wollen.</p>
+      </div>
+      <div class="fcol">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="mailto:sparkside@gmail.com">sparkside@gmail.com</a></li>
+          <li><span style="font-size:.82rem;color:var(--dim)">Schweiz</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span class="fcp">© 2025 Sparkside. Alle Rechte vorbehalten.</span>
+      <div class="flg"><a href="#">Datenschutz</a><a href="#">Impressum</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leistungen — Sparkside</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="cur"></div>
+
+  <nav id="nav">
+    <div class="nav-in">
+      <a class="logo" href="index.html">SPARK<span>/</span>SIDE</a>
+      <ul class="nl">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="on">Leistungen</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+      <a class="ncta" href="contact.html?typ=projekt">Projekt starten</a>
+      <button class="burg" id="burg" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="drw" id="drw">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="services.html" onclick="closeDrawer()">Leistungen</a>
+    <a href="portfolio.html" onclick="closeDrawer()">Portfolio</a>
+    <a href="contact.html" onclick="closeDrawer()">Kontakt</a>
+    <a class="drw-cta" href="contact.html?typ=projekt" onclick="closeDrawer()">Projekt starten →</a>
+  </div>
+
+  <div class="spacer"></div>
+
+  <main>
+    <div class="ph">
+      <p class="tag rv">Was wir tun</p>
+      <h1 class="rv d1">LEISTUNGEN<br>DIE <span>LIEFERN.</span></h1>
+    </div>
+
+    <div class="svl">
+      <div class="svi rv">
+        <div class="svi-n">01</div>
+        <div class="svi-b">
+          <h3>WEBDESIGN & ENTWICKLUNG</h3>
+          <p>Websites, die nicht nur gut aussehen — sondern funktionieren. Von Strategie und Design bis zur technischen Umsetzung, alles aus einer Hand.</p>
+          <div class="stags"><span class="stag">UI/UX</span><span class="stag">WordPress</span><span class="stag">Elementor Pro</span><span class="stag">Responsive</span><span class="stag">SEO</span></div>
+        </div>
+        <div class="svi-p">Auf Anfrage</div>
+      </div>
+
+      <div class="svi rv">
+        <div class="svi-n">02</div>
+        <div class="svi-b">
+          <h3>BRANDING & CORPORATE DESIGN</h3>
+          <p>Ein Markenauftritt, der dich unverwechselbar macht. Logo, Farben, Typografie und Style Guide — konsistent auf jeder Plattform.</p>
+          <div class="stags"><span class="stag">Logo</span><span class="stag">Brand Identity</span><span class="stag">Style Guide</span><span class="stag">Figma</span></div>
+        </div>
+        <div class="svi-p">Auf Anfrage</div>
+      </div>
+
+      <div class="svi rv">
+        <div class="svi-n">03</div>
+        <div class="svi-b">
+          <h3>SOCIAL MEDIA MANAGEMENT</h3>
+          <p>Strategisch, konsistent, messbar. Wir übernehmen Planung und Content-Erstellung, damit du dich aufs Business konzentrieren kannst.</p>
+          <div class="stags"><span class="stag">Instagram</span><span class="stag">TikTok</span><span class="stag">LinkedIn</span><span class="stag">Strategie</span><span class="stag">Analytics</span></div>
+        </div>
+        <div class="svi-p">Auf Anfrage</div>
+      </div>
+
+      <div class="svi rv">
+        <div class="svi-n">04</div>
+        <div class="svi-b">
+          <h3>PRINT & DIGITALE DOSSIERS</h3>
+          <p>Vom interaktiven PDF-Dossier bis zum druckfertigen Jahresbericht — Unterlagen, die in jedem Gespräch für dich arbeiten.</p>
+          <div class="stags"><span class="stag">InDesign</span><span class="stag">Acrobat Pro</span><span class="stag">Interaktiv</span><span class="stag">Druckdaten</span></div>
+        </div>
+        <div class="svi-p">Auf Anfrage</div>
+      </div>
+
+      <div class="svi rv">
+        <div class="svi-n">05</div>
+        <div class="svi-b">
+          <h3>SEO & DIGITAL ADS</h3>
+          <p>Sichtbarkeit, die bleibt. Wir optimieren deine Präsenz für Suchmaschinen und schalten Kampagnen, die tatsächlich konvertieren.</p>
+          <div class="stags"><span class="stag">Google Ads</span><span class="stag">Meta Ads</span><span class="stag">On-Page SEO</span><span class="stag">Reporting</span></div>
+        </div>
+        <div class="svi-p">Auf Anfrage</div>
+      </div>
+    </div>
+
+    <div class="cta" style="margin-top:0">
+      <h2>WEISST DU WAS<br>DU <span>BRAUCHST?</span></h2>
+      <p>Oder noch nicht — beides ist ein guter Anfang.</p>
+      <a class="btn btn-g" href="contact.html?typ=projekt">Jetzt anfragen →</a>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-top">
+      <div>
+        <div class="fl">SPARK<span>/</span>SIDE</div>
+        <p class="ft-tag">Digitale Lösungen für Unternehmen, die rausstechen wollen.</p>
+      </div>
+      <div class="fcol">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Leistungen</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span class="fcp">© 2025 Sparkside. Alle Rechte vorbehalten.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

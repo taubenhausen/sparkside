@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hochzeitsfotografie — Sparkside Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="cur"></div>
+  <nav id="nav">
+    <div class="nav-in">
+      <a class="logo" href="index.html">SPARK<span>/</span>SIDE</a>
+      <ul class="nl">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Leistungen</a></li>
+        <li><a href="portfolio.html" class="on">Portfolio</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+      <a class="ncta" href="contact.html?typ=projekt">Projekt starten</a>
+      <button class="burg" id="burg" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="drw" id="drw">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="services.html" onclick="closeDrawer()">Leistungen</a>
+    <a href="portfolio.html" onclick="closeDrawer()">Portfolio</a>
+    <a href="contact.html" onclick="closeDrawer()">Kontakt</a>
+    <a class="drw-cta" href="contact.html?typ=projekt" onclick="closeDrawer()">Projekt starten →</a>
+  </div>
+  <div class="spacer"></div>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="portfolio.html">Portfolio</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Hochzeitsfotografie</span>
+    </div>
+
+    <div class="proj-hero">
+      <img src="assets/hochzeit/hochzeit-3.webp" alt="Hochzeitsfotografie" />
+    </div>
+
+    <div class="proj-meta">
+      <div>
+        <p class="tag rv">Hochzeit & Portrait</p>
+        <h1 class="proj-title rv d1">HOCHZEITS<br><span>FOTOGRAFIE</span></h1>
+        <p class="proj-desc rv d2">
+          Hochzeiten sind einmalig — und genau so behandle ich sie. Ich halte den Tag so fest, wie er wirklich war: die Blicke, die Momente, die Details. Ohne gestellte Posen, ohne Zeitdruck. Stattdessen ehrliche, atmosphärische Bilder, die auch in 20 Jahren noch berühren.
+        </p>
+        <p class="proj-desc rv d2" style="margin-top:-.5rem">
+          Meine Hochzeitsfotografie ist dokumentarisch und gleichzeitig ästhetisch: natürliches Licht, sorgfältige Bildkomposition, dezente Nachbearbeitung. Das Ergebnis sind Aufnahmen, die sich wie echte Erinnerungen anfühlen — nicht wie Stockfotos.
+        </p>
+        <div class="pi-tags rv d3">
+          <span class="pi-tag" style="border-color:rgba(247,37,133,.3);color:rgba(247,37,133,.8)">Hochzeitsfotografie</span>
+          <span class="pi-tag" style="border-color:rgba(247,37,133,.3);color:rgba(247,37,133,.8)">Portraitfotografie</span>
+          <span class="pi-tag" style="border-color:rgba(247,37,133,.3);color:rgba(247,37,133,.8)">Reportage</span>
+        </div>
+      </div>
+      <div class="proj-sidebar rv d2">
+        <div class="proj-info-row">
+          <div class="proj-info-label">Auftraggeber</div>
+          <div class="proj-info-val">Privat</div>
+        </div>
+        <div class="proj-info-row">
+          <div class="proj-info-label">Standort</div>
+          <div class="proj-info-val">Zentralschweiz</div>
+        </div>
+        <div class="proj-info-row">
+          <div class="proj-info-label">Jahr</div>
+          <div class="proj-info-val">2024</div>
+        </div>
+        <div class="proj-info-row">
+          <div class="proj-info-label">Leistungen</div>
+          <div class="proj-info-val">Hochzeitsreportage, Portraitfotografie, Bildbearbeitung</div>
+        </div>
+        <div class="proj-info-row" style="margin-top:1.5rem">
+          <div class="proj-info-val" style="font-size:.72rem;color:var(--dim);line-height:1.5">Interesse an einer Hochzeitsreportage? Ich nehme mir Zeit für ein persönliches Gespräch — völlig unverbindlich.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-body">
+      <h2 class="proj-section-title rv">IMPRESSIONEN</h2>
+      <div class="gal rv d1">
+        <div class="gal-item"><img src="assets/hochzeit/hochzeit-1.webp" alt="Hochzeitsfotografie" loading="lazy" /></div>
+        <div class="gal-item"><img src="assets/hochzeit/hochzeit-2.webp" alt="Hochzeitsfotografie" loading="lazy" /></div>
+        <div class="gal-item"><img src="assets/hochzeit/hochzeit-3.webp" alt="Hochzeitsfotografie" loading="lazy" /></div>
+        <div class="gal-item"><img src="assets/hochzeit/hochzeit-4.webp" alt="Hochzeitsfotografie" loading="lazy" /></div>
+        <div class="gal-item"><img src="assets/hochzeit/hochzeit-5.webp" alt="Hochzeitsfotografie" loading="lazy" /></div>
+        <div class="gal-item"><img src="assets/hochzeit/hochzeit-6.webp" alt="Hochzeitsfotografie" loading="lazy" /></div>
+      </div>
+
+      <div class="proj-cta-block rv" style="text-align:center;padding:4rem 2rem 2rem">
+        <p style="font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:1rem">Euer grosser Tag verdient die besten Bilder</p>
+        <h3 style="font-family:var(--fh);font-size:clamp(2rem,4vw,3.5rem);color:var(--w);margin-bottom:1.5rem">LASS UNS REDEN.</h3>
+        <a class="btn btn-g" href="contact.html?typ=hochzeit">Anfrage stellen</a>
+      </div>
+
+      <div class="proj-nav rv">
+        <a class="tlink" href="portfolio.html">← Zurück zum Portfolio</a>
+        <a class="btn btn-g" href="contact.html?typ=projekt">Projekt anfragen</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-top">
+      <div><div class="fl">SPARK<span>/</span>SIDE</div><p class="ft-tag">Digitale Lösungen für Unternehmen, die rausstechen wollen.</p></div>
+      <div class="fcol"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Leistungen</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Kontakt</a></li></ul></div>
+      <div class="fcol"><h5>Kontakt</h5><ul><li><a href="mailto:sparkside@gmail.com">sparkside@gmail.com</a></li></ul></div>
+    </div>
+    <div class="foot-bot"><span class="fcp">© 2025 Sparkside. Alle Rechte vorbehalten.</span><div class="flg"><a href="#">Datenschutz</a><a href="#">Impressum</a></div></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

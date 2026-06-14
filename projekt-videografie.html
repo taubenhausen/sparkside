@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videografie & Reels — Sparkside Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="cur"></div>
+  <nav id="nav">
+    <div class="nav-in">
+      <a class="logo" href="index.html">SPARK<span>/</span>SIDE</a>
+      <ul class="nl">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Leistungen</a></li>
+        <li><a href="portfolio.html" class="on">Portfolio</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+      <a class="ncta" href="contact.html?typ=projekt">Projekt starten</a>
+      <button class="burg" id="burg" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="drw" id="drw">
+    <a href="index.html" onclick="closeDrawer()">Home</a>
+    <a href="services.html" onclick="closeDrawer()">Leistungen</a>
+    <a href="portfolio.html" onclick="closeDrawer()">Portfolio</a>
+    <a href="contact.html" onclick="closeDrawer()">Kontakt</a>
+    <a class="drw-cta" href="contact.html?typ=projekt" onclick="closeDrawer()">Projekt starten →</a>
+  </div>
+  <div class="spacer"></div>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="portfolio.html">Portfolio</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Videografie & Reels</span>
+    </div>
+
+    <!-- Autoplay hero video -->
+    <div class="proj-hero" style="position:relative;overflow:hidden;">
+      <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+        <source src="assets/videos/allinonebar_Promo-Video.mp4" type="video/mp4" />
+      </video>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(9,9,9,.7) 0%,transparent 60%);"></div>
+    </div>
+
+    <div class="proj-meta">
+      <div>
+        <p class="tag rv">Video & Social Media</p>
+        <h1 class="proj-title rv d1">VIDEOGRAFIE<br><span>& REELS</span></h1>
+        <p class="proj-desc rv d2">
+          Videos, die funktionieren — nicht nur gut aussehen. Ich produziere kurze, prägnante Clips für Social Media, die innerhalb von Sekunden Aufmerksamkeit erzeugen. Ob Atmosphäre-Video für ein Restaurant, ein Promo-Reel für ein Event-Hotel oder ein Statement-Video für einen Brand: ich kümmere mich um Aufnahme, Schnitt und Ton.
+        </p>
+        <p class="proj-desc rv d2" style="margin-top:-.5rem">
+          Alle Videos werden mobiloptimiert geliefert — im Hochformat für Stories und Reels, im Querformat für Websites und YouTube. Auf Wunsch inklusive Untertitel, Sounddesign und Farbkorrektur.
+        </p>
+        <div class="pi-tags rv d3">
+          <span class="pi-tag" style="border-color:rgba(247,37,133,.3);color:rgba(247,37,133,.8)">Social Media Video</span>
+          <span class="pi-tag" style="border-color:rgba(247,37,133,.3);color:rgba(247,37,133,.8)">Instagram Reels</span>
+          <span class="pi-tag" style="border-color:rgba(247,37,133,.3);color:rgba(247,37,133,.8)">Promo Videos</span>
+          <span class="pi-tag" style="border-color:rgba(247,37,133,.3);color:rgba(247,37,133,.8)">Schnitt & Ton</span>
+        </div>
+      </div>
+      <div class="proj-sidebar rv d2">
+        <div class="proj-info-row">
+          <div class="proj-info-label">Kunden</div>
+          <div class="proj-info-val">All in One Bar, Hotel Sempachersee, Restaurant Sempia, Twenyz Beauty</div>
+        </div>
+        <div class="proj-info-row">
+          <div class="proj-info-label">Formate</div>
+          <div class="proj-info-val">9:16 (Reels/Stories), 16:9 (Web), 1:1 (Feed)</div>
+        </div>
+        <div class="proj-info-row">
+          <div class="proj-info-label">Zeitraum</div>
+          <div class="proj-info-val">2024 – laufend</div>
+        </div>
+        <div class="proj-info-row">
+          <div class="proj-info-label">Leistungen</div>
+          <div class="proj-info-val">Dreh, Schnitt, Farbkorrektur, Sounddesign, Untertitel</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-body">
+
+      <!-- Gastronomie -->
+      <div class="event-sub">
+        <h2 class="proj-section-title rv">GASTRONOMIE & BARS</h2>
+        <p class="proj-desc rv" style="margin-bottom:2rem">
+          Atmosphärische Promo-Videos für Bars und Restaurants — im Querformat für die Website, im Hochformat für Instagram und TikTok.
+        </p>
+        <div class="vid-grid rv d1">
+          <div class="vid-item">
+            <video onclick="this.paused?this.play():this.pause()" style="cursor:pointer;"  muted preload="none" muted loop playsinline>
+              <source src="assets/videos/allinonebar_Promo-Video.mp4" type="video/mp4" />
+            </video>
+            <p class="vid-label">All in One Bar Ebikon — Promo-Video</p>
+          </div>
+          <div class="vid-item">
+            <video onclick="this.paused?this.play():this.pause()" style="cursor:pointer;"  muted preload="none" muted loop playsinline>
+              <source src="assets/videos/sempia-video-ad.webm" type="video/webm" />
+            </video>
+            <p class="vid-label">Restaurant Sempia Nottwil — Atmosphäre-Clip</p>
+          </div>
+          <div class="vid-item">
+            <video onclick="this.paused?this.play():this.pause()" style="cursor:pointer;"  muted preload="none" muted loop playsinline>
+              <source src="assets/videos/eventlocation-before-after.webm" type="video/webm" />
+            </video>
+            <p class="vid-label">Hotel Sempachersee — Event Location Before & After</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beauty & Lifestyle -->
+      <div class="event-sub">
+        <h2 class="proj-section-title rv">BEAUTY & LIFESTYLE</h2>
+        <p class="proj-desc rv" style="margin-bottom:2rem">
+          Reels und Story-Clips für Beauty-Brands — schnell, modern, auf den Punkt. Produziert für den direkten Einsatz auf Instagram und TikTok.
+        </p>
+        <div class="vid-grid rv d1">
+          <div class="vid-item">
+            <video onclick="this.paused?this.play():this.pause()" style="cursor:pointer;"  muted preload="none" muted loop playsinline style="max-height:700px;object-fit:cover;">
+              <source src="assets/videos/twenyz-reel-1.webm" type="video/webm" />
+            </video>
+            <p class="vid-label">Twenyz Beauty — Reel 1</p>
+          </div>
+          <div class="vid-item">
+            <video onclick="this.paused?this.play():this.pause()" style="cursor:pointer;"  muted preload="none" muted loop playsinline style="max-height:700px;object-fit:cover;">
+              <source src="assets/videos/twenyz-reel-2.webm" type="video/webm" />
+            </video>
+            <p class="vid-label">Twenyz Beauty — Reel 2</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statement -->
+      <div class="event-sub">
+        <h2 class="proj-section-title rv">STATEMENT VIDEOS</h2>
+        <p class="proj-desc rv" style="margin-bottom:2rem">
+          Kurze, prägnante Statement-Reels für Brands, die auf Social Media sichtbar sein wollen.
+        </p>
+        <div class="vid-grid rv d1">
+          <div class="vid-item">
+            <video onclick="this.paused?this.play():this.pause()" style="cursor:pointer;"  muted preload="none" muted loop playsinline style="max-height:700px;object-fit:cover;">
+              <source src="assets/videos/make-a-statement-reel.webm" type="video/webm" />
+            </video>
+            <p class="vid-label">Make a Statement — Brand Reel</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-nav rv">
+        <a class="tlink" href="portfolio.html">← Zurück zum Portfolio</a>
+        <a class="btn btn-g" href="contact.html?typ=video">Video-Projekt anfragen</a>
+      </div>
+    </div>
+    <script>
+    (function(){
+      document.querySelectorAll('.vid-item video').forEach(function(v,i){
+        v.id = v.id || ('vg-vid-'+i);
+        new IntersectionObserver(function(e){
+          e.forEach(function(x){ x.isIntersecting ? v.play() : v.pause(); });
+        },{threshold:0.35}).observe(v);
+      });
+    })();
+  </script>
+</main>
+
+  <footer class="foot">
+    <div class="foot-top">
+      <div><div class="fl">SPARK<span>/</span>SIDE</div><p class="ft-tag">Digitale Lösungen für Unternehmen, die rausstechen wollen.</p></div>
+      <div class="fcol"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="services.html">Leistungen</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Kontakt</a></li></ul></div>
+      <div class="fcol"><h5>Kontakt</h5><ul><li><a href="mailto:sparkside@gmail.com">sparkside@gmail.com</a></li></ul></div>
+    </div>
+    <div class="foot-bot"><span class="fcp">© 2025 Sparkside. Alle Rechte vorbehalten.</span><div class="flg"><a href="#">Datenschutz</a><a href="#">Impressum</a></div></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
