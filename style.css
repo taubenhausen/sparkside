@@ -588,6 +588,7 @@ main {
   overflow: hidden;
   height: 100%;
   min-height: 260px;
+  position: relative;
 }
 
 .wi-ph {
@@ -1427,15 +1428,20 @@ main {
   cursor: pointer;
   aspect-ratio: 21 / 9;
   min-height: 380px;
+  width: 100%;
 }
 .pi-hero-img {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
 }
-.pi-hero-img img {
+.pi-hero-img img,
+.pi-hero-img video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform .9s cubic-bezier(.22,1,.36,1);
 }
 .pi-hero:hover .pi-hero-img img { transform: scale(1.04); }
@@ -1851,19 +1857,78 @@ main {
 /* ============================================================
    RESPONSIVE ADDITIONS
    ============================================================ */
+
+/* ---- Section container (replaces inline styles in portfolio.html) ---- */
+.pf-section {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem 0;
+  overflow: visible;
+}
+.pf-section--hero {
+  overflow: hidden;
+}
+
+/* ---- Tablet (≤960px) ---- */
 @media (max-width: 960px) {
   .pg-3 { grid-template-columns: 1fr 1fr; }
   .proj-meta { grid-template-columns: 1fr; gap: 2rem; }
   .gal { columns: 2; }
   .pi-hero-overlay { padding: 1.8rem 2rem; }
-  .pi-hero { aspect-ratio: 16 / 9; }
+  .pi-hero { aspect-ratio: 16 / 9; min-height: unset; }
+  .wg { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .wi.tall .wi-img { min-height: 380px; }
+  .vid-grid { grid-template-columns: 1fr; }
+  .foot-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .pf-section { padding: 2rem 1.5rem 0; }
 }
+
+/* ---- Mobile (≤580px) ---- */
 @media (max-width: 580px) {
-  .pg-3 { grid-template-columns: 1fr; padding: 1.5rem 1.25rem 5rem; }
+  /* Layout */
+  .pg-3 { grid-template-columns: 1fr; padding: 1rem 1rem 5rem; }
+  .wg { grid-template-columns: 1fr; gap: .75rem; padding: 0 1rem; }
+  .wi.tall .wi-img { min-height: 56vw; }
+  .wi-img { min-height: 52vw; }
+
+  /* Gallery */
   .gal { columns: 1; }
-  .proj-hero { height: 48vh; }
-  .proj-meta, .proj-body, .breadcrumb { padding-left: 1.25rem; padding-right: 1.25rem; }
-  .pi-hero-overlay { padding: 1.2rem 1.25rem; }
+  .gal-item { margin-bottom: 2px; }
+
+  /* Project hero */
+  .proj-hero { height: 44vw; min-height: 200px; }
+  .proj-meta, .proj-body, .breadcrumb { padding-left: 1rem; padding-right: 1rem; }
+  .proj-meta { padding-top: 1.5rem; }
+  .proj-title { font-size: clamp(2rem, 11vw, 3.5rem); }
+  .proj-section-title { font-size: clamp(1.6rem, 8vw, 2.5rem); }
+
+  /* Portfolio hero card */
+  .pi-hero { aspect-ratio: 4 / 5; min-height: unset; width: 100%; }
+  .pi-hero-overlay { padding: 1.2rem 1rem; }
+  .pi-hero-title { font-size: clamp(1.8rem, 9vw, 3rem); }
+  .pf-section { padding: 1.5rem 1rem 0; overflow: hidden; }
+
+  /* Videos */
+  .vid-grid { grid-template-columns: 1fr !important; gap: 1rem; }
+  .vid-item[style*="max-width"] { max-width: 100% !important; }
+  .vid-item video { max-height: 72vw; }
+
+  /* Type */
+  .ph h1, .ph .h1 { font-size: clamp(2.4rem, 14vw, 5rem); }
+
+  /* Footer */
+  .foot-top { grid-template-columns: 1fr; }
+  .foot-bot { flex-direction: column; gap: 1rem; text-align: center; }
+  .flg { justify-content: center; }
+
+  /* Nav */
+  .ncta { display: none; }
+}
+
+/* ---- Extra small (≤400px) ---- */
+@media (max-width: 400px) {
+  .pi-hero { aspect-ratio: 3 / 4; }
+  .gal { columns: 1; }
 }
 
 /* vid-label alias */
@@ -1885,4 +1950,14 @@ main {
   color: var(--w);
   margin: 0 0 .4rem;
   line-height: 1;
+}
+
+/* Video inside wi-img card (index.html Selected Work) */
+.wi-img video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
