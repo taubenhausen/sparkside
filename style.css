@@ -285,14 +285,25 @@ main {
   margin: 0 auto;
 }
 
-.rv,
-.js .rv,
-.js .rv.in {
+/* Default: always visible (no-JS fallback) */
+.rv {
   opacity: 1;
   transform: none;
+}
+
+/* JS is active: hide until .in is added */
+.js .rv {
+  opacity: 0;
+  transform: translateY(28px);
   transition:
     opacity .75s cubic-bezier(.22,1,.36,1),
     transform .75s cubic-bezier(.22,1,.36,1);
+}
+
+/* Element in viewport: reveal */
+.js .rv.in {
+  opacity: 1;
+  transform: none;
 }
 
 .rv.d1 { transition-delay: .1s; }

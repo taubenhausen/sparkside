@@ -142,3 +142,110 @@ document.addEventListener("DOMContentLoaded", function () {
 function submitForm() {
   alert("Vielen Dank — wir melden uns innerhalb von 24 Stunden.");
 }
+
+// ============================================================
+// Counter Animation (Entziffer-Zahlen)
+// .sn HTML is e.g.:  40<span>+</span>
+// We animate only the leading text node, preserving the span.
+// ============================================================
+(function () {
+  function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function animateCounter(textNode, target, duration) {
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased   = easeOutExpo(progress);
+      textNode.nodeValue = Math.round(target * eased);
+      if (progress < 1) requestAnimationFrame(step);
+      else textNode.nodeValue = target;
+    }
+    requestAnimationFrame(step);
+  }
+
+  function initCounters() {
+    var snEls = document.querySelectorAll(".stat .sn");
+    if (!snEls.length) return;
+
+    var triggered = false;
+
+    var counters = Array.from(snEls).map(function (el) {
+      // First child text node holds the number
+      var textNode = null;
+      for (var i = 0; i < el.childNodes.length; i++) {
+        if (el.childNodes[i].nodeType === 3) { textNode = el.childNodes[i]; break; }
+      }
+      var target = parseInt((textNode ? textNode.nodeValue : el.textContent).replace(/\D/g, ""), 10) || 0;
+      if (textNode) textNode.nodeValue = "0"; // reset to 0 before animating
+      return { textNode: textNode, target: target };
+    });
+
+    if (!("IntersectionObserver" in window)) {
+      counters.forEach(function (c) { if (c.textNode) c.textNode.nodeValue = c.target; });
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting && !triggered) {
+          triggered = true;
+          observer.disconnect();
+          counters.forEach(function (c, i) {
+            setTimeout(function () {
+              if (c.textNode) animateCounter(c.textNode, c.target, 1500);
+            }, i * 140);
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    var statsSection = document.querySelector(".stats");
+    if (statsSection) observer.observe(statsSection);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCounters);
+  } else {
+    initCounters();
+  }
+})();
+
+// ============================================================
+// Reliable video autoplay via IntersectionObserver (global)
+// ============================================================
+(function () {
+  function initVideoAutoplay() {
+    // Target both .vid-autoplay videos AND inline autoplay videos in .wi-img
+    var videos = document.querySelectorAll(".vid-autoplay video, .wi-img video");
+    if (!videos.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      videos.forEach(function (v) { v.play().catch(function(){}); });
+      return;
+    }
+
+    videos.forEach(function (video) {
+      // Skip videos already handled by inline scripts
+      if (video.id && (video.id === "bar-vid-promo" || video.id === "bar-vid-reel")) return;
+
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.play().catch(function () {});
+          } else {
+            e.target.pause();
+          }
+        });
+      }, { threshold: 0.25 }).observe(video);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initVideoAutoplay);
+  } else {
+    initVideoAutoplay();
+  }
+})();
