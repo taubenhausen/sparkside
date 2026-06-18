@@ -97,24 +97,24 @@
 
   <nav id="nav">
     <div class="nav-in">
-      <a class="logo" href="index.html">SPARK<span>/</span>SIDE</a>
+      <a class="logo" href="/">SPARK<span>/</span>SIDE</a>
       <ul class="nl">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Leistungen</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html" class="on">Kontakt</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Leistungen</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/contact" class="on">Kontakt</a></li>
       </ul>
-      <a class="ncta" href="contact.html?typ=projekt">Projekt starten</a>
+      <a class="ncta" href="/contact?typ=projekt">Projekt starten</a>
       <button class="burg" id="burg" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <div class="drw" id="drw">
-    <a href="index.html" onclick="closeDrawer()">Home</a>
-    <a href="services.html" onclick="closeDrawer()">Leistungen</a>
-    <a href="portfolio.html" onclick="closeDrawer()">Portfolio</a>
-    <a href="contact.html" onclick="closeDrawer()">Kontakt</a>
-    <a class="drw-cta" href="contact.html?typ=projekt" onclick="closeDrawer()">Projekt starten →</a>
+    <a href="/" onclick="closeDrawer()">Home</a>
+    <a href="/services" onclick="closeDrawer()">Leistungen</a>
+    <a href="/portfolio" onclick="closeDrawer()">Portfolio</a>
+    <a href="/contact" onclick="closeDrawer()">Kontakt</a>
+    <a class="drw-cta" href="/contact?typ=projekt" onclick="closeDrawer()">Projekt starten →</a>
   </div>
 
   <div class="spacer"></div>
@@ -127,10 +127,12 @@
 
     <div class="cg">
       <div class="cl rv">
-        <!-- Portrait-Platzhalter: Füge dein Foto als assets/portrait.webp ein, wenn du das Bild später austauschen möchtest. -->
         <div class="portrait-ph">
           <div class="portrait-ph-inner">
-            <img src="assets/image00001.jpeg" alt="Portrait" class="portrait-img" />
+            <picture>
+              <source srcset="assets/portrait-square.webp" type="image/webp" />
+              <img src="assets/image00001.jpeg" alt="Sofija Reich — Sparkside" class="portrait-img" />
+            </picture>
           </div>
         </div>
         <p class="portrait-name">Sofija Reich</p>
@@ -321,10 +323,10 @@
       <div class="fcol">
         <h5>Navigation</h5>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Leistungen</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Leistungen</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/contact">Kontakt</a></li>
         </ul>
       </div>
       <div class="fcol">

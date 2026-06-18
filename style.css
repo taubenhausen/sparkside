@@ -1815,51 +1815,43 @@ main {
    ============================================================ */
 .portrait-ph {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  max-width: 260px;
-  background: var(--bg2);
-  border: 1px solid var(--bdr);
+  aspect-ratio: 1 / 1;
+  max-width: 300px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.8rem;
+  /* left accent line */
+  border-left: 3px solid;
+  border-image: var(--grad) 1;
 }
-.portrait-ph::before {
+.portrait-ph::after {
+  /* bottom fade into page background */
   content: '';
   position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 25%, rgba(247,37,133,.06) 0%, transparent 68%);
+  bottom: 0; left: 0; right: 0;
+  height: 35%;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
 }
 .portrait-ph-inner {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: .9rem;
 }
-.portrait-ph-icon {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: rgba(247,37,133,.04);
-  border: 1px solid rgba(247,37,133,.15);
-  display: flex; align-items: center; justify-content: center;
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: saturate(.92) contrast(1.04);
 }
-.portrait-ph-icon svg { width: 24px; height: 24px; fill: rgba(247,37,133,.25); }
-.portrait-ph-label {
-  font-size: .55rem;
+.portrait-name {
+  font-size: .6rem;
   font-weight: 600;
-  letter-spacing: .24em;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  color: rgba(242,242,240,.14);
-}
-.portrait-ph::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--grad);
-  opacity: .25;
+  color: var(--dim);
+  margin-bottom: 1.6rem;
 }
 
 /* ============================================================
