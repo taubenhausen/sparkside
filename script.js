@@ -37,15 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Reveal Animation
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("in");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.07 });
-  document.querySelectorAll(".rv:not(.in)").forEach(function (el) { observer.observe(el); });
+  document.documentElement.classList.add("js");
+  var revealItems = document.querySelectorAll(".rv:not(.in)");
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.07 });
+    revealItems.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealItems.forEach(function (el) { el.classList.add("in"); });
+  }
 
   // Gallery Lightbox
   (function () {
